@@ -55,7 +55,7 @@ just don't understand what you meant, but please keep talking to me
 (\ ``>>>``\ )."
 
 As your programs become increasingly sophisticated, you will encounter
-three general types of errors:
+four general types of errors:
 
 * Syntax errors
     These are the first errors you will make and the easiest to fix. A
@@ -93,7 +93,18 @@ three general types of errors:
     while my instructions were syntactically correct, they sadly
     contained a small but undetected semantic error.".
 
-Again in all three types of errors, Python is merely trying its hardest
+* Runtime errors
+    A runtime error is when your program's syntax is correct, but something 
+    happens when you run the program that causes it to crash (abruptly stops running). 
+    For example, if you have a program that asks the user for a number that is used to 
+    divide another number, and the user enters 0, the program will crash 
+    because division by zero is not defined mathematically. Another example of a runtime 
+    error is when you declare a variable name such as ``total``, but later in the program 
+    when you try to use that variable you misspell it as ``totla``. Python doesn't know
+    that you really meant to use ``total``. It's just trying to access a variable named
+    ``totla``, but there is no variable in the program with that name assigned a value.
+
+Again in all four types of errors, Python is merely trying its hardest
 to do exactly what you have asked.
 
 .. mchoice:: intro-gowrong-mc-error
@@ -101,12 +112,14 @@ to do exactly what you have asked.
     :answer_a: Logic error
     :answer_b: Semantic error
     :answer_c: Syntax error
-    :answer_d: No error
+    :answer_d: Runtime error
+    :answer_e: No error
     :correct: c
     :feedback_a: Try again! This will not cause a logic error - something is missing from the code.
     :feedback_b: Try again! This will not cause a semantic error - something is missing from the code.
     :feedback_c: Print statements need parentheses.
-    :feedback_d: This will throw an error.
+    :feedback_d: Try again! This will not cause a runtime error - something is missing from the code.
+    :feedback_e: This will throw an error.
 
     What type of error would this code produce?
 
@@ -125,6 +138,27 @@ to do exactly what you have asked.
     :feedback_c: Try again!
 
     Which of the following is a semantic error?
+
+.. mchoice:: intro-gowrong-mc-runtime
+    :practice: T
+    :answer_a: Logic error
+    :answer_b: Semantic error
+    :answer_c: Syntax error
+    :answer_d: Runtime error
+    :answer_e: No error
+    :correct: d
+    :feedback_a: Try again! This will not cause a logic error - something is wrong with the code.
+    :feedback_b: Try again! This will not cause a semantic error - something is wrong with the code.
+    :feedback_c: Try again! This will not cause a syntax error - something is wrong with the code.
+    :feedback_d: The programmer intended to use the ``name`` variable, but misspelled it in the print statement.
+    :feedback_e: This will throw an error.
+
+    What time of error would this code produce?
+
+    ::
+
+      name = input("What is your name? ")
+      print("Hello", naem)
 
 .. mchoice:: intro-gowrong-mc-syntax
     :practice: T
